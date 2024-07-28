@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, margin=25px, padding=25px, border: black" >
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <!-- <meta name="viewport" content="width=1920"> -->
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -26,10 +28,45 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- <style>
+      body {
+        background-color: tan;
+        color: black;
+      }
+
+      /* On screens that are 992px wide or less, the background color is blue */
+      @media screen and (max-width: 992px) {
+        body {
+          background-color: blue;
+          color: white;
+        }
+      }
+
+      /* On screens that are 600px wide or less, the background color is olive */
+      @media screen and (max-width: 600px) {
+        body {
+          background-color: olive;
+          color: white;
+        }
+      }
+      </style> -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <style>
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 900px 1fr;
+        grid-column-gap: 10px;
+     }
+      </style>
+    </div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
