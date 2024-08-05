@@ -1,6 +1,6 @@
 .App {
   display: grid;
-  grid-template-columns: 328px 200px 600px auto;
+  grid-template-columns: 328px 200px auto 328px;
   grid-template-rows: repeat(1, 1fr);
   margin-top: 20px;
   margin-bottom: 20px;
@@ -21,8 +21,6 @@ img {
 
 #nav {
   grid-column: 3/4;
-  /* text-align: justify; */
-  /* justify-self: stretch; */
 }
 
 /* .route {
