@@ -10,10 +10,10 @@ function Hero() {
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
             <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-            <button type="button" class="btn btn-primary-hero" size="lg">Reserve a Table</button>
+            <button type="button" class="btn btn-hero" size="lg">Reserve a Table</button>
         </div>
-        <div id="hero-pic">
-            <img src={pic}/>
+        <div className="hero-pic">
+            <img src={pic} id="hero-img"/>
         </div>
     </div>
     )

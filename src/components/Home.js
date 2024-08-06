@@ -1,6 +1,14 @@
+import Navbar from '../Navbar';
+import Hero from './Hero';
+import Highlights from './Highlights';
+
+
 function Home() {
     return (
-        <h1></h1>
+        <div>
+            <Hero />
+            <Highlights />
+        </div>
     )
 }
 
