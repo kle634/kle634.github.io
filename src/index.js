@@ -7,11 +7,9 @@ import Navbar from './Navbar';
 import Home from "./components/Home";
 import About from "./components/About";
 import Menu from "./components/Menu";
-import Reservations from "./components/Reservations";
+import {BookingPage} from "./components/Reservations";
 import OrderOnline from "./components/OrderOnline";
 import Login from "./components/Login";
-// import Hero from './components/Hero';
-// import Highlights from './components/Highlights';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,7 +20,7 @@ root.render(
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/reservations" element={<Reservations />} />
+          <Route path="/reservations" element={<BookingPage />} />
           <Route path="/order" element={<OrderOnline />} />
           <Route path="/login" element={<Login />} />
       </Routes>
