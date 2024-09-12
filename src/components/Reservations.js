@@ -1,87 +1,85 @@
+import React from 'react';
 import { useState } from 'react';
-import  './Reservations.css'
+import { useReducer } from 'react';
+import  './Reservations.css';
+import {fetchAPI} from "../api.js";
+import {submitForm} from "./ConfirmedBooking"
+import { useNavigate } from "react-router-dom";
 
 function BookingPage() {
+    let availableTimes = [];
 
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [guests, setGuests] = useState('');
-    const [occasion, setOccasion] = useState('');
+    const [occasion, setOccasion] = useState('');;
 
-    // const availableTimes = [
-    //     {time: "17:00"},
-    //     {time: "18:00"},
-    //     {time: "19:00"},
-    //     {time: "20:00"},
-    //   ];
+    function initializeTimes() {
+        let date = new Date();
+        availableTimes = fetchAPI(date);
+        return (availableTimes);
+    }
 
-    // const availableTimes = [
-    //     "17:00",
-    //     "18:00",
-    //     "19:00",
-    //     "22:00",
-    //   ];
+    function reducer(state, action) {
+        switch(action.type) {
+            case 'UPDATE':
+                // console.log("i'm here in reducer")
+                availableTimes = fetchAPI(action.setDate);
+                return availableTimes;
+            default:
+                // console.log(state);
+                return state;
+        }
+    }
 
-    const [availableTimes, setavailableTimes] = useState([
-            '17:00',
-            '18:00',
-            '19:00',
-            '22:00',
-    ]);
+    const navigate = useNavigate();
 
-    const arrayDataItems = availableTimes.map((time) => <option>{time}</option>);
-
-    // Event handlers to update state variables
-     const handleDateChange = (event) => {
-        setDate(event.target.value);
-        console.log(date);
-     };
-     const handleTimeChange = (event) => {
-        setTime(event.target.value);
-        console.log(time);
-    };
-    const handleGuestsChange = (event) => {
-        setGuests(event.target.value);
-        console.log(guests);
-    };
-    const handleOccasionChange = (event) => {
-        setOccasion(event.target.value);
-        console.log(occasion);
-    };
-
-    const handleSubmit = (event) => {
-        // validate(value);
+    function handleSubmit(event) {
         event.preventDefault();
-        console.log("on submit");
-    };
+        if(submitForm(event.target)) {
+            navigate('/confirmed');
+        };
+    }
 
     function BookingForm() {
+        //Initialize availableTimes with initial state
+        const[state, dispatch] = useReducer(reducer, initializeTimes());
+
+        console.log("available times", availableTimes)
+
+        function updateTimes(event) {
+            let date = new Date(event.target.value);
+            dispatch({type: 'UPDATE', setDate: date});
+        }
+
+        const arrayDataItems = availableTimes.map((time) => <option>{time}</option>);
+        // debugger;
         return (
             <form className="res-form" onSubmit={handleSubmit}>
-            <label htmlFor="res-date">Choose date:</label>
-            <input onChange={handleDateChange} type="date" id="res-date" />
-            <label htmlFor="res-time">Choose time:</label>
-            <select id="res-time" onChange={handleTimeChange}>
-                {arrayDataItems};
-            </select>
-            <label htmlFor="guests">Number of guests:</label>
-            <input onChange={handleGuestsChange} type="number" placeholder="1" min="1" max="10" id="guests" />
-            <label htmlFor="occasion">Occasion:</label>
-            <select id="occasion" onChange={handleOccasionChange}>
-                <option>Birthday</option>
-                <option>Anniversary</option>
-            </select>
-            <input id="res-submit" type="submit" value="Make Your reservation" />
+                <label htmlFor="res-date">Choose date:</label>
+                <input onChange={updateTimes} type="date" id="res-date" />
+                <label htmlFor="res-time">Choose time:</label>
+                <select id="res-time">
+                    {arrayDataItems}
+                </select>
+                <label htmlFor="guests">Number of guests:</label>
+                <input type="number" placeholder="1" min="1" max="10" id="guests" />
+                <label htmlFor="occasion">Occasion:</label>
+                <select id="occasion">
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+                </select>
+                <input id="res-submit" type="submit" />
             </form>
         )
     }
 
-
     return (
         <div>
             <BookingForm />
+            {/* onSubmit={(e) => {submitForm(e.target); e.preventDefault();} */}
         </div>
     )
 }
 
-export {BookingPage};
+export default BookingPage;

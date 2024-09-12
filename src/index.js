@@ -7,9 +7,10 @@ import Navbar from './Navbar';
 import Home from "./components/Home";
 import About from "./components/About";
 import Menu from "./components/Menu";
-import {BookingPage} from "./components/Reservations";
+import BookingPage from "./components/Reservations";
 import OrderOnline from "./components/OrderOnline";
 import Login from "./components/Login";
+import {ConfirmedBooking} from "./components/ConfirmedBooking";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
           <Route path="/reservations" element={<BookingPage />} />
           <Route path="/order" element={<OrderOnline />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/confirmed" element={<ConfirmedBooking />} />
       </Routes>
     </BrowserRouter>
   // </React.StrictMode>

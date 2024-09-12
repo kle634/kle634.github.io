@@ -1,6 +1,6 @@
 function OrderOnline() {
     return (
-        <h1>OrderOnline</h1>
+        <div></div>
     )
 }
 
