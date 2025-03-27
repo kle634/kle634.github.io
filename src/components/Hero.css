@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: minmax(auto, 330px) 300px auto minmax(auto, 330px);
   grid-template-rows: 250px 100px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 #hero-background {
@@ -60,9 +60,10 @@ p {
   height: 35px;
 }
 
-/* .btn-hero:hover {
-  background-color: lightblue;
-} */
+.btn-hero:hover {
+  /* border: 3px solid rgba(0, 0, 0, 0.24); */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+}
 
 .hero-pic {
   grid-column: 3/4;

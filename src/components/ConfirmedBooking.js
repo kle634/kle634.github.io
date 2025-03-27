@@ -1,20 +1,16 @@
 // import  './Reservations.css';
-import React from 'react';
-import { useNavigate } from "react-router-dom";
-import { submitAPI} from "../api.js";
-
-
+import React from "react";
+import { submitAPI } from "../api.js";
 
 function submitForm(formData) {
-    if(submitAPI(formData)) {
-        return (true);
-    }
+  if (submitAPI(formData)) {
+    // console.log(formData.get("name"));
+    return true;
+  }
 }
 
-function ConfirmedBooking() {
-    return (
-        <h1>Booking Confirmed!</h1>
-    )
+function ConfirmedBooking(formData) {
+  return <div className="message">Your booking has been confirmed!</div>;
 }
 
-export {submitForm, ConfirmedBooking};
+export { submitForm, ConfirmedBooking };

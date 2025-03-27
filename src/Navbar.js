@@ -15,9 +15,6 @@ function Navbar() {
         <Link to="/menu" style={{ marginRight: "40px" }}>
           Menu
         </Link>
-        <Link to="/about" style={{ marginRight: "40px" }}>
-          About
-        </Link>
         <Link to="/reservations" style={{ marginRight: "40px" }}>
           Reservations
         </Link>

@@ -22,6 +22,11 @@
   height: 40px;
 }
 
+.btn-specials:hover {
+  /* border: 3px solid rgba(0, 0, 0, 0.24); */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+}
+
 .cards-grid {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +76,7 @@
 .card-text {
   font-family: sans-serif;
   color: black;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px 20px 20px;
   height: 150px;
 }
 
@@ -94,6 +99,10 @@
   border: none;
   font-weight: bold;
   font-size: 14px;
+}
+
+.btn-highlights:hover {
+  font-weight: 850;
 }
 
 @media screen and (max-width: 1050px) {
