@@ -1,96 +1,136 @@
 .highlights-sub {
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #specials {
-    color: black;
-    margin: 0px 320px 0px 310px;
+  color: black;
+  margin-right: 19%;
+  font-size: 35px;
 }
 
 .btn-specials {
-    all: revert;
-    background-color: #F4CE14;
-    border-radius: 8px;
-    border: none;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    width: 120px;
-    height: 40px;
+  all: revert;
+  background-color: #f4ce14;
+  border-radius: 8px;
+  border: none;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  width: 120px;
+  height: 40px;
+}
+
+.btn-specials:hover {
+  /* border: 3px solid rgba(0, 0, 0, 0.24); */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
 }
 
 .cards-grid {
-    display: flex;
-    margin-left: 315px;
-    margin-right: 345px;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
 }
 
 .card {
-    background-color: lightgray;
-    margin: 50px 0px 50px 0px;
-    border-radius: 10px 10px 0px 0px;
-    height: 450px;
-    width: 220px;
-    /* display: flex; */
+  background-color: lightgray;
+  margin: 50px 0px 50px 0px;
+  border-radius: 10px 10px 0px 0px;
+  height: 450px;
+  width: 220px;
+  /* display: flex; */
 }
 
 #img-salad {
-    /* all: revert; */
-    height: 33%;
-    width: 100%;
-    border-radius: 10px 10px 0px 0px;
+  /* all: revert; */
+  height: 33%;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .card-body {
-    display: flex;
-    flex-wrap: wrap;
-    /* height: 100%; */
+  display: flex;
+  flex-wrap: wrap;
+  /* height: 100%; */
 }
 
-.card-title  {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    margin: 20px 0px 30px 0px;
+.card-title {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  margin: 20px 0px 30px 0px;
 }
 
 #name {
-   width: 140px;
-   margin-left: 15px;
-
+  width: 140px;
+  margin-left: 15px;
 }
 
 #price {
-    width: 40px;
-    margin-right: 15px;
-    color: orange;
+  width: 40px;
+  margin-right: 15px;
+  color: orange;
 }
 
 .card-text {
-    font-family: sans-serif;
-    color: black;
-    padding: 0px 20px 0px 20px;
-    height: 150px;
+  font-family: sans-serif;
+  color: black;
+  padding: 0px 20px 20px 20px;
+  height: 150px;
 }
 
 #img-bruchetta {
-    all: revert;
-    width: 100%;
-    border-radius: 10px 10px 0px 0px;
+  all: revert;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 
 #img-dessert {
-    /* all: revert; */
-    width: 100%;
-    height: 33%;
-    border-radius: 10px 10px 0px 0px;
+  /* all: revert; */
+  width: 100%;
+  height: 33%;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .btn-highlights {
-    margin-left: 10px;
-    background:lightgray;
-    border: none;
-    font-weight: bold;
-    font-size: 14px;
+  margin-left: 10px;
+  background: lightgray;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn-highlights:hover {
+  font-weight: 850;
+}
+
+@media screen and (max-width: 1050px) {
+  .highlights-sub {
+    display: flex;
+    justify-content: start;
+  }
+
+  #specials {
+    margin-left: 30px;
+    margin-right: 40px;
+  }
+
+  .cards-grid {
+    margin-left: 30px;
+    margin-right: 30px;
+    gap: auto;
+  }
+
+  .greek-salad {
+    margin-bottom: 0px;
+  }
+
+  .bruchetta {
+    margin-bottom: 0px;
+  }
+
+  .lemon-dessert {
+    margin-top: 0px;
+  }
 }
